@@ -12,6 +12,7 @@ Point to the file and the item number (e.g. "DECISIONS open item 5").
 | `CONTEXT.md` | what we build, deadlines, official rules, data, who owns what |
 | `DECISIONS.md` | decided items, and the open list ("Open, Eren decides") |
 | `GOTCHAS.md` | traps found so far |
+| `STATUS.md` | where we are now (overwritten at each checkpoint) |
 | `KEEP-IN-MIND.md` | short reminders for the pitch and the build (our edge vs rival teams, rules hygiene) |
 | `AI_USE.md` | running log of AI use (the NASA submission must describe it) |
 | `CREDITS-PENDING.md` | packages, data and papers to copy into the repo's `CREDITS.md` |

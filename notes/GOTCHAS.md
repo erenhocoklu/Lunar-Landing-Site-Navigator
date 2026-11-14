@@ -31,5 +31,13 @@ Append, never delete. Strike through with a date when fixed.
 - **Do not reuse LunaNav code:** it has no licence. Other 2026 teams' code is a judging risk even under MIT.
 - **Wording:** the crewed landing moved to Artemis IV (2028). Say "Artemis south-pole candidate regions".
   Never claim "planners told us X" or "NASA can't do this".
-- **NASA HLS 2024 thresholds** (Earth visible >= 25%, slope < 10 deg over 100 m, within 6 deg of the pole) are UNVERIFIED
-  until someone confirms them in the PDF. Label them as NASA's only after that.
+- ~~**NASA HLS 2024 thresholds** (Earth visible >= 25%, slope < 10 deg over 100 m, within 6 deg of the pole) are UNVERIFIED
+  until someone confirms them in the PDF. Label them as NASA's only after that.~~ Checked 2026-11-14 14:30 (engine subagent,
+  NTRS 20240009596 full text via API; images not checked). VERIFIED: Dwyer Cianciolo (NASA LaRC), "Artemis Human Landing System
+  Update", seminar presentation, Aug 2024, no technical review. Listed as "Key Artemis III Landing Requirements" (p.19): land within
+  6 deg latitude of the pole, landing slope < 10 deg over 100 m, EVA slope < 20 deg over 2 km, land within 100 m of target,
+  direct-to-Earth comm (no relay), lit for the surface stay. Only map masks (pp.23-24), no time period stated: Earth visibility < 25%
+  and Sun visibility < 5% excluded. **Label:** requirements "as listed in a NASA presentation (2024)"; the 25% / 5% values
+  "visibility masks used in that presentation's maps". Never "NASA standard".
+- **Longest darkness can differ by up to a day when the Sun grazes the horizon** (engine + frontend cross-check, 14 Nov):
+  a 0.0001 deg difference split one 43 h night into 30 h + 12 h. Show night lengths as approximate near the limit. See log 1440.

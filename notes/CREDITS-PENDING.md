@@ -23,3 +23,7 @@ strikes them through here with a date.
 | JPL Horizons API (sub-solar/sub-Earth points, q 14,15,19,20) | dataset/service | NASA/JPL | `data/subpoints.json` via `pipeline/make_subpoints.py`; page checks | frontend (in repo CREDITS.md, uncommitted) |
 | De Rosa et al. 2012 (GR1, MP1 coordinates), arXiv:1208.5587 | paper | citation only | site list in `index.html` | frontend (in repo CREDITS.md, uncommitted) |
 | IBM Plex Sans/Mono, Saira Condensed (Google Fonts) | media (font) | SIL OFL 1.1 (UNVERIFIED, check) | `index.html` (Adrian's original page) | frontend (in repo CREDITS.md, uncommitted) |
+| Dwyer Cianciolo 2024, "Artemis Human Landing System Update" (NASA LaRC presentation, NTRS 20240009596) | paper/presentation | citation only (NASA) | slider defaults (slope, Earth/Sun masks, 6 deg) | engine |
+| pyshp 3.1.8 | package | MIT (VERIFIED, installed package metadata) | engine (`build_psr.py`, reads the PSR shapefile) | engine |
+| shapely 2.2.0 | package | BSD-3-Clause (VERIFIED, installed package metadata) | engine (`build_psr.py`, simplify + distance) | engine |
+| LPSR_80S_20MPP_ADJ PSR shapefile (PGDA product 90, Barker et al. 2023) | dataset | NASA data (cite with the DEM) | `data/psr.json`, `psr_km` | engine |
