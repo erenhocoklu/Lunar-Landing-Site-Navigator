@@ -131,6 +131,62 @@ select{font:500 13px var(--f-body);color:var(--ink);background:var(--panel);bord
 canvas.chart{width:100%;display:block}
 #horizon{height:210px}
 
+:root{--pass:#1D5AA6; --fail:#B45309}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--pass:#86B6EE; --fail:#F2A33A}}
+:root[data-theme="dark"]{--pass:#86B6EE; --fail:#F2A33A}
+.prov{margin:0;font:500 12.5px/1.5 var(--f-mono);color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:7px 10px;background:var(--panel)}
+.prov a{color:var(--earth)}
+.planner{display:grid;grid-template-columns:340px minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.planner{grid-template-columns:minmax(0,1fr)}}
+.pctl{display:grid;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px}
+.pmain{display:grid;gap:12px;min-width:0}
+.fld{display:grid;gap:4px;font-size:12.5px;color:var(--muted)}
+.fld select,.fld input[type=date]{font:500 13px var(--f-body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:6px 8px}
+.row2{display:flex;flex-wrap:wrap;gap:10px 14px}
+.pseg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--bg);width:max-content}
+.pseg button{font:500 13px/1 var(--f-body);color:var(--ink);background:transparent;border:0;padding:8px 10px;cursor:pointer;border-right:1px solid var(--line)}
+.pseg button:last-child{border-right:0}
+.pseg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.pseg button:disabled{color:var(--muted);cursor:not-allowed}
+.pseg button:focus-visible,.cal-c:focus-visible,.rank tr:focus-visible{outline:2px solid var(--focus);outline-offset:1px}
+.sl{display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:12.5px;color:var(--muted)}
+.sl input{grid-column:1/-1}
+.sl output{color:var(--ink)}
+.chk{display:flex;gap:8px;align-items:center;font-size:13px}
+.hint{margin:0;font-size:12px;color:var(--muted)}
+.est{margin:0;font:500 12px var(--f-mono);color:var(--muted)}
+.est.warn{color:var(--fail)}
+.funnel{display:grid;gap:3px;font:500 12.5px/1.35 var(--f-mono);border-top:1px solid var(--line);padding-top:10px}
+.funnel div{display:grid;grid-template-columns:1fr auto;gap:8px}
+.funnel b{font-weight:600}
+.callegend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted)}
+.callegend span{display:inline-flex;align-items:center;gap:5px}
+.cal{display:grid;gap:2px;overflow-x:auto;max-height:520px;overflow-y:auto;padding-bottom:4px}
+.cal .mrow{display:grid;grid-template-columns:62px repeat(31,minmax(14px,1fr));gap:2px;align-items:center}
+.cal .mlab{font:500 11px var(--f-mono);color:var(--muted)}
+.cal-c{display:grid;place-items:center;min-width:14px;height:16px;border-radius:2px;font:600 10px/1 var(--f-mono);border:1.5px solid transparent;padding:0;cursor:pointer;background:transparent;color:var(--fail)}
+i.cal-c{display:inline-grid;width:16px;font-style:normal;cursor:default}
+.cal-c.pass{background:var(--pass);border-color:var(--pass)}
+.cal-c.fail{border-color:var(--fail)}
+.cal-c.none{visibility:hidden}
+.cal-c.sel{box-shadow:0 0 0 2px var(--ink)}
+.tablewrap{overflow-x:auto}
+.rank{width:100%;border-collapse:collapse;font-size:13px}
+.rank th{text-align:left;font:600 11px var(--f-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);padding:6px 8px;white-space:nowrap}
+.rank td{border-bottom:1px solid var(--line);padding:7px 8px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.rank tr.selr td{background:var(--panel)}
+.rank tbody tr{cursor:pointer}
+.rank .bar{width:70px;display:inline-block;vertical-align:middle;margin-left:6px}
+.q{font-size:11.5px;color:var(--muted)}
+.headline{margin:0;font:600 15px/1.45 var(--f-mono);font-variant-numeric:tabular-nums;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:10px 12px}
+.headline .s{color:var(--sun)}
+.headline .e{color:var(--earth)}
+.headline .m{color:var(--muted);font-weight:500;font-size:12.5px}
+.addsite{display:flex;flex-wrap:wrap;gap:8px;align-items:end}
+.addsite label{display:grid;gap:2px;font-size:12px;color:var(--muted)}
+.addsite input{width:110px;font:500 13px var(--f-mono);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:6px 8px}
+.addsite button{font:500 13px var(--f-body);color:var(--bg);background:var(--ink);border:0;border-radius:4px;padding:8px 12px;cursor:pointer}
+input[type=date]{font:500 13px var(--f-body);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:5px 8px}
 .notes{border-top:1px solid var(--line);padding-top:18px;display:grid;gap:12px}
 .notes dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 24px;margin:0}
 @media (max-width:760px){.notes dl{grid-template-columns:minmax(0,1fr)}}
@@ -147,8 +203,62 @@ canvas.chart{width:100%;display:block}
       <h1>South Pole Navigator</h1>
       <p class="lede">At the Moon's south pole, the Sun circles 1–2° above the horizon, and Earth rises and sinks near the horizon. The terrain decides where you have power and where you can talk to Earth.</p>
     </div>
-    <p class="badge">Demo: generated terrain and simplified Sun and Earth positions</p>
+    <p class="badge">Sun and Earth: real positions (JPL Horizons). 3D terrain: still a generated demo.</p>
   </header>
+
+  <p class="prov" id="prov">Loading data…</p>
+
+  <section class="planner" aria-label="Mission planner">
+    <form class="pctl" id="pctl" onsubmit="return false">
+      <h2>Mission planner</h2>
+      <label class="fld">Site
+        <select id="pSite"></select>
+      </label>
+      <div class="row2">
+        <label class="fld">First landing date (UTC)
+          <input id="start" type="date" min="2026-01-01" max="2030-01-01">
+        </label>
+        <div class="fld"><span>Time span</span>
+          <div class="pseg" id="pYears" role="group" aria-label="Time span in years">
+            <button type="button" data-v="1" aria-pressed="true">1 y</button><button type="button" data-v="2" aria-pressed="false">2 y</button><button type="button" data-v="3" aria-pressed="false">3 y</button><button type="button" data-v="5" aria-pressed="false">5 y</button>
+          </div>
+        </div>
+      </div>
+      <p class="est" id="pEst"></p>
+      <div class="fld"><span>Mission type</span>
+        <div class="pseg" id="pPreset" role="group" aria-label="Mission preset">
+          <button type="button" data-v="crew" aria-pressed="false">Crew, 6 d</button><button type="button" data-v="robotic" aria-pressed="true">Robotic, 13 d</button><button type="button" data-v="custom" aria-pressed="false">Custom</button>
+        </div>
+      </div>
+      <label class="sl">Mission length <output id="oLen"></output><input id="sLen" type="range" min="1" max="60" step="1"></label>
+      <label class="sl">Sunlight at least <output id="oSun"></output><input id="sSun" type="range" min="0" max="100" step="1"></label>
+      <label class="sl">Earth contact at least <output id="oEarth"></output><input id="sEarth" type="range" min="0" max="100" step="1"></label>
+      <label class="sl">Longest night at most <output id="oNight"></output><input id="sNight" type="range" min="0" max="336" step="1"></label>
+      <label class="sl">Sun above horizon at touchdown <output id="oTd"></output><input id="sTd" type="range" min="-3" max="5" step="0.1"></label>
+      <div class="fld"><span>Mast height (panels and antenna)</span>
+        <div class="pseg" id="pMast" role="group" aria-label="Mast height">
+          <button type="button" data-v="0" aria-pressed="false">0 m</button><button type="button" data-v="2" aria-pressed="true">2 m</button><button type="button" data-v="10" aria-pressed="false">10 m</button>
+        </div>
+        <span class="hint" id="pMastNote"></span>
+      </div>
+      <label class="chk"><input id="cRelay" type="checkbox"> Relay satellite available (ignore the Earth-contact limit)</label>
+      <p class="hint">Limits are example values, not NASA requirements.</p>
+      <div class="funnel" id="funnel" aria-live="polite"></div>
+    </form>
+    <div class="pmain">
+      <div class="block-head"><h2 id="calTitle">Landing windows</h2><p class="caption" id="calNote"></p></div>
+      <div class="callegend" aria-hidden="true">
+        <span><i class="cal-c pass"></i>passes all limits</span>
+        <span><i class="cal-c fail">☀</i>too little sun</span>
+        <span><i class="cal-c fail">⊕</i>too little Earth contact</span>
+        <span><i class="cal-c fail">☾</i>night too long</span>
+        <span><i class="cal-c fail">▲</i>Sun too low at touchdown</span>
+      </div>
+      <div class="cal" id="cal"></div>
+      <div class="block-head"><h2>Site ranking</h2><p class="caption">Same limits, every site. Click a row to open its calendar.</p></div>
+      <div class="tablewrap"><table class="rank" id="rank"></table></div>
+    </div>
+  </section>
 
   <main class="layout">
     <section class="stage" aria-label="3D map">
@@ -163,8 +273,8 @@ canvas.chart{width:100%;display:block}
           <button class="play" id="play" type="button" aria-label="Start the simulation">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path id="playIcon" d="M4 2.5v11l9-5.5z"/></svg>
           </button>
-          <input id="t" type="range" min="0" max="365" step="0.05" value="80" aria-label="Day of the year">
-          <output id="tOut" for="t">Day 80.0</output>
+          <input id="t" type="range" min="0" max="365" step="0.01" value="0" aria-label="Time since the start date">
+          <output id="tOut" for="t">…</output>
         </div>
         <div class="opts">
           <div class="seg" role="group" aria-label="What the map shows">
@@ -186,25 +296,32 @@ canvas.chart{width:100%;display:block}
           </label>
         </div>
         <p class="readout" id="readout"></p>
-        <p class="caption">Drag to rotate, pinch or scroll to zoom, tap the terrain to add a new site.</p>
+        <p class="caption">Drag to rotate, pinch or scroll to zoom. The 3D view is lit by the real Sun as seen from the pole, on demo terrain.</p>
       </div>
     </section>
 
     <aside class="rail">
       <section class="block">
+        <p class="headline" id="headline" aria-live="polite"></p>
         <div class="block-head">
           <h2>Candidate sites</h2>
-          <p class="caption">Panels and antenna on a 10 m mast</p>
+          <p class="caption" id="horizonNote">Flat horizon until terrain masks load</p>
         </div>
         <div class="sites" id="sites"></div>
+        <form class="addsite" id="addsite">
+          <label>Lat <input id="aLat" type="number" step="0.0001" min="-90" max="-80" value="-89.0" required></label>
+          <label>Lon E <input id="aLon" type="number" step="0.0001" min="0" max="360" value="0" required></label>
+          <button type="submit">Add site</button>
+        </form>
+        <p class="caption">Coordinates: published site points (papers cited in CREDITS.md), not official landing points.</p>
       </section>
       <section class="block">
         <h2>Horizon seen from <span id="hName">A</span></h2>
         <canvas class="chart" id="horizon"></canvas>
-        <p class="caption">Grey: surrounding terrain. Yellow band: the Sun's path over a year. Blue box: the area where Earth wobbles. 0° on the bottom axis is the direction of Earth.</p>
+        <p class="caption">Grey: terrain horizon. Yellow dots: the Sun's path over the year from the start date. Blue dots: Earth's path. Bottom axis: true azimuth (N, E, S, W).</p>
       </section>
       <section class="block">
-        <h2>One year, day by day</h2>
+        <h2>Day by day</h2>
         <canvas class="chart" id="timeline"></canvas>
         <p class="caption">Yellow: how much of the day has Sun. Blue: how much of the day Earth is visible. Tap the strip to jump to that day.</p>
       </section>
@@ -214,21 +331,52 @@ canvas.chart{width:100%;display:block}
   <section class="notes" aria-label="What is simulated">
     <h2>What is simulated here and what the competition version would use</h2>
     <dl>
-      <div><dt>Terrain</dt><dd>Generated: a 21 km crater near the pole and a massif toward Earth, on a 48 × 48 km map. The real version would use LOLA elevation models (Moon Trek, PDS).</dd></div>
-      <div><dt>Sun and Earth</dt><dd>Simplified motion: the Sun makes a full circle every 29.5 days and rises or sinks by ±1.54° over a year; Earth wobbles ±6.7° vertically and ±7.9° horizontally. The real version would use NASA SPICE ephemerides.</dd></div>
-      <div><dt>Computation</dt><dd>Each point's horizon is computed in 64 directions (360 for candidate sites), out to 46 km, including the Moon's curvature. The same computation works on real data.</dd></div>
+      <div><dt>Terrain</dt><dd>Generated: a 21 km crater near the pole and a massif toward Earth, on a 48 × 48 km map. Next: real LOLA heights from NASA PGDA (LDEM_80S_*_ADJ), baked by our Python engine.</dd></div>
+      <div><dt>Sun and Earth</dt><dd>Real: one JPL Horizons table (2026-2030, every 6 h) of the sub-solar and sub-Earth points in the Moon's mean-Earth frame. The page interpolates it and computes the Sun and Earth direction from any site, including Earth parallax. Checked against Horizons topocentric values.</dd></div>
+      <div><dt>Computation</dt><dd>3D demo: each point's horizon in 64 directions out to 46 km, with the Moon's curvature. Real sites: 360-direction horizon masks from LOLA terrain, computed by our Python engine (flat horizon until they load).</dd></div>
     </dl>
   </section>
 </div>
 
 <script>
-(function(){
+/* ---------- ephemeris: real Sun and Earth directions from data/subpoints.json ----------
+   The file holds Moon-centred x, y, z of the Earth (km) and the Sun (1000 km) in the
+   MOON_ME frame every 6 h (JPL Horizons, see pipeline/make_subpoints.py). For a site we
+   subtract the site's own position (parallax: ~0.26 deg for Earth) and project onto the
+   site's local east / north / up. Azimuth is clockwise from north, as in Horizons. */
+var EPH = null;
+function ephAt(jd){
+  var f = (jd - EPH.jd0)/(EPH.step_hours/24), i = Math.floor(f), u = f - i;
+  if (i < 1){ i = 1; u = f - 1; } if (i > EPH.n - 3){ i = EPH.n - 3; u = f - i; }
+  // 4-point cubic Lagrange weights on rows i-1 .. i+2
+  var w = [-u*(u - 1)*(u - 2)/6, (u + 1)*(u - 1)*(u - 2)/2, -(u + 1)*u*(u - 2)/2, (u + 1)*u*(u - 1)/6];
+  var e = [0, 0, 0], s = [0, 0, 0];
+  for (var k = 0; k < 4; k++){
+    var r = (i - 1 + k)*3;
+    for (var c = 0; c < 3; c++){ e[c] += w[k]*EPH.earth_km[r + c]; s[c] += w[k]*EPH.sun_1000km[r + c]*1000; }
+  }
+  return {earth: e, sun: s};
+}
+function azel(latDeg, lonDeg, v){
+  var R = 1737.4, la = latDeg*Math.PI/180, lo = lonDeg*Math.PI/180;
+  var cla = Math.cos(la), sla = Math.sin(la), clo = Math.cos(lo), slo = Math.sin(lo);
+  var dx = v[0] - R*cla*clo, dy = v[1] - R*cla*slo, dz = v[2] - R*sla;   // parallax
+  var up = dx*cla*clo + dy*cla*slo + dz*sla;
+  var east = -dx*slo + dy*clo;
+  var north = -dx*sla*clo - dy*sla*slo + dz*cla;
+  var az = Math.atan2(east, north)*180/Math.PI;
+  return {az: (az + 360) % 360, el: Math.asin(up/Math.hypot(dx, dy, dz))*180/Math.PI};
+}
+function jdFromDate(d){ return d.getTime()/86400000 + 2440587.5; }
+function dateFromJd(jd){ return new Date((jd - 2440587.5)*86400000); }
+
+function startApp(){
 'use strict';
 var DEG = Math.PI/180, R_MOON = 1737.4, INV2R = 1/(2*R_MOON);
 var N = 129, NV = N*N, BIG_N = 257, OFF = 64, CELL = 0.375, HALF = 24, HALF_BIG = 48;
 var NAZ = 64, MAX_D = 46, SUN_R = 0.267, EARTH_R = 0.95;
-var SYN = 29.530589, DRAC_Y = 346.62, DRAC_M = 27.2122, ANOM_M = 27.5545;
 var MAST = 0.010, GROUND = 0.002, YEAR = 365, SPD = 8, MEAN_S = 730;
+var DAYS = 365;   // planner time span in days (1, 2, 3 or 5 years); YEAR stays 365 for the 3D yearly averages
 
 function $(s){ return document.querySelector(s); }
 function num(v, d){ return v.toFixed(d); }
@@ -324,9 +472,11 @@ var HMINr = 1e9, HMAXr = -1e9;
   }
 })();
 
-/* ---------- Sun & Earth (simplified) ---------- */
-function sunAt(t){ return {az: ((t/SYN)*360) % 360, el: 1.54*Math.sin(2*Math.PI*t/DRAC_Y)}; }
-function earthAt(t){ var a = 7.9*Math.sin(2*Math.PI*t/ANOM_M); return {az: (a + 360) % 360, el: 6.7*Math.sin(2*Math.PI*t/DRAC_M + 0.7)}; }
+/* ---------- Sun & Earth seen from the pole (drives the 3D demo terrain) ----------
+   At the pole, azimuth 0 points along longitude 0 (grid -z) and 90 along 90 E (grid +x).
+   Points off the pole get the small-offset correction el + c*cos(az_body - az_point). */
+function sunAt(t){ return azel(-90, 0, ephAt(state.jd0 + t).sun); }
+function earthAt(t){ return azel(-90, 0, ephAt(state.jd0 + t).earth); }
 function relAz(az){ var r = ((az + 180) % 360 + 360) % 360 - 180; return r; }
 
 /* ---------- horizon maps for every vertex (progressive) ---------- */
@@ -359,80 +509,116 @@ function meanStep(t){
   }
 }
 
-/* ---------- candidate sites ---------- */
+/* ---------- state ---------- */
+var today = new Date(); today = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+var state = {jd0: jdFromDate(today), t: 0, playing: false, speed: 3, exag: 2.5, mode: 0, mast: '2'};
+
+/* ---------- candidate sites (real coordinates, MOON_ME, east longitude) ----------
+   Horizon masks come from the Python LOLA engine (data/sites.json): per site and mast height,
+   360 values, bin k = true azimuth [k, k+1) deg clockwise from north, looked up between bin centres.
+   Until that file exists, each site uses a flat 0 deg horizon and says so.
+   Rules (same as the engine): Sun "up" = disc centre above the horizon; sunlight % = average visible
+   fraction of the disc; Earth visible = any part of its 0.95 deg disc above the horizon. */
+var SITE_LIST = [
+  {id: 'A', name: 'Connecting Ridge (C1)', lat: -89.4505, lon: 222.84, note: 'Gläser et al. 2018, site C1', studied: true},
+  {id: 'B', name: 'Shackleton rim (S)', lat: -89.7849, lon: 203.97, note: 'Gläser et al. 2018, site S', studied: true},
+  {id: 'C', name: 'de Gerlache rim (GR1)', lat: -88.6952, lon: 291.7154, note: 'De Rosa et al. 2012, GR1', studied: true},
+  {id: 'D', name: 'Malapert massif (MP1)', lat: -85.9756, lon: 357.8876, note: 'De Rosa et al. 2012, MP1', studied: true}
+];
+var SITEDATA = window.__siteData || null;   // {id: {masks: {"0": [...], "2": [...], "10": [...]}, err_m, effres_m, psr_km, ...}}
+if (SITEDATA) $('#horizonNote').textContent = 'Horizon: LOLA terrain masks';
 var sites = [];
-function nearestVertexWhere(test){
-  var best = -1, bh = -1e9;
-  for (var v = 0; v < NV; v++){ if (test(vx[v], vz[v]) && vh[v] > bh){ bh = vh[v]; best = v; } }
-  return best;
+function maskFor(id){
+  var d = SITEDATA && SITEDATA[id]; if (!d || !d.masks) return null;
+  return d.masks[state.mast] || null;
 }
-function makeSite(id, name, x, z){
-  var c = Math.hypot(x, z)/R_MOON/DEG, az = Math.atan2(x, -z);
-  var s = {id:id, name:name, x:x, z:z, h:hAt(x, z), ex:c*Math.sin(az), ez:c*Math.cos(az), dist:Math.hypot(x, z)};
+function makeSite(o){
+  var s = {id: o.id, name: o.name, lat: o.lat, lon: o.lon, note: o.note, studied: !!o.studied, meta: (SITEDATA && SITEDATA[o.id]) || null};
+  var m = maskFor(o.id);
+  s.flat = !m; s.prof = m ? Float32Array.from(m) : new Float32Array(360);
+  var lo = 1e9, hi = -1e9; for (var a = 0; a < 360; a++){ if (s.prof[a] < lo) lo = s.prof[a]; if (s.prof[a] > hi) hi = s.prof[a]; }
+  s.pmin = lo; s.pmax = hi;
   computeSite(s);
   return s;
 }
+/* One hourly series over the whole span: what the calendar and the ranking read. */
 function computeSite(s){
-  var prof = new Float32Array(360), h0 = s.h + MAST, lo = 1e9, hi = -1e9;
-  for (var a = 0; a < 360; a++){
-    var val = horizonDir(s.x, s.z, h0, Math.sin(a*DEG), -Math.cos(a*DEG), 0.15, 0.025);
-    prof[a] = val; if (val < lo) lo = val; if (val > hi) hi = val;
+  var H = DAYS*24, hs = new Float32Array(H), he = new Uint8Array(H), hel = new Float32Array(H);
+  var daySun = new Float32Array(DAYS), dayEarth = new Float32Array(DAYS), ps = [], pe = [];
+  var sumS = 0, sumE = 0, sumB = 0, runs = [], runStart = -1;
+  for (var h = 0; h < H; h++){
+    var t = (h + 0.5)/24, st = siteState(s, t);
+    if (h % 6 === 0 && h < 365*24){ ps.push(st.sunAz, st.sunEl); pe.push(st.earthAz, st.earthEl); }   // first-year path for the chart
+    var lit = st.sunLit, ev = st.earthVis > 0 ? 1 : 0;
+    hs[h] = lit; he[h] = ev; hel[h] = st.sunEl - st.sunHz;
+    sumS += lit; sumE += ev; if (lit >= 0.5 && ev) sumB += 1;
+    if (lit < 0.5){ if (runStart < 0) runStart = h; } else if (runStart >= 0){ runs.push(runStart, h); runStart = -1; }
+    var d = Math.floor(h/24); daySun[d] += lit/24; dayEarth[d] += ev/24;
   }
-  s.prof = prof; s.pmin = lo; s.pmax = hi;
-  var n = YEAR*SPD, daySun = new Float32Array(YEAR), dayEarth = new Float32Array(YEAR);
-  var sumS = 0, sumE = 0, sumB = 0, run = 0, longest = 0;
-  for (var q = 0; q < n; q++){
-    var t = (q + 0.5)/SPD, st = siteState(s, t);
-    var lit = st.sunLit, ev = st.earthVis > 0.5 ? 1 : 0;
-    sumS += lit; sumE += ev; if (lit > 0.5 && ev) sumB += 1;
-    if (lit < 0.5){ run++; if (run > longest) longest = run; } else run = 0;
-    var d = Math.floor(t); daySun[d] += lit/SPD; dayEarth[d] += ev/SPD;
-  }
-  s.daySun = daySun; s.dayEarth = dayEarth;
-  s.pSun = sumS/n; s.pEarth = sumE/n; s.pBoth = sumB/n; s.night = longest/SPD;
+  if (runStart >= 0) runs.push(runStart, H);
+  // prefix sums so any mission window is O(1) for sun % and Earth %
+  var cs = new Float64Array(H + 1), ce = new Float64Array(H + 1);
+  for (h = 0; h < H; h++){ cs[h + 1] = cs[h] + hs[h]; ce[h + 1] = ce[h] + he[h]; }
+  s.hSun = hs; s.hEarth = he; s.hSunEl = hel; s.cs = cs; s.ce = ce; s.darkRuns = runs;
+  s.daySun = daySun; s.dayEarth = dayEarth; s.pathSun = ps; s.pathEarth = pe;
+  var longest = 0, clipped = false;
+  for (var r = 0; r < runs.length; r += 2){ var len = runs[r + 1] - runs[r]; if (len > longest){ longest = len; clipped = runs[r] === 0 || runs[r + 1] === H; } }
+  s.pSun = sumS/H; s.pEarth = sumE/H; s.pBoth = sumB/H; s.night = longest/24; s.nightClipped = clipped;
 }
-function profAt(s, az){ var a = ((az % 360) + 360) % 360, i0 = Math.floor(a), fr = a - i0; return s.prof[i0 % 360]*(1 - fr) + s.prof[(i0 + 1) % 360]*fr; }
+function profAt(s, az){
+  var a = ((az - 0.5) % 360 + 360) % 360, i0 = Math.floor(a), fr = a - i0;   // bin k is centred on k + 0.5
+  return s.prof[i0 % 360]*(1 - fr) + s.prof[(i0 + 1) % 360]*fr;
+}
 function siteState(s, t){
-  var su = sunAt(t), ea = earthAt(t);
-  var sEl = su.el + Math.cos(su.az*DEG)*s.ez + Math.sin(su.az*DEG)*s.ex;
-  var eEl = ea.el + Math.cos(ea.az*DEG)*s.ez + Math.sin(ea.az*DEG)*s.ex;
+  var ep = ephAt(state.jd0 + t), su = azel(s.lat, s.lon, ep.sun), ea = azel(s.lat, s.lon, ep.earth);
   var sHz = profAt(s, su.az), eHz = profAt(s, ea.az);
-  return {sunAz:su.az, sunEl:sEl, sunHz:sHz, sunLit:clamp((sEl - sHz + SUN_R)/(2*SUN_R), 0, 1),
-          earthAz:ea.az, earthEl:eEl, earthHz:eHz, earthVis:clamp((eEl - eHz + EARTH_R)/(2*EARTH_R), 0, 1)};
+  return {sunAz: su.az, sunEl: su.el, sunHz: sHz, sunLit: clamp((su.el - sHz + SUN_R)/(2*SUN_R), 0, 1),
+          earthAz: ea.az, earthEl: ea.el, earthHz: eHz, earthVis: clamp((ea.el - eHz + EARTH_R)/(2*EARTH_R), 0, 1)};
 }
-function quickScore(x, z){
-  var h0 = hAt(x, z) + MAST, prof = new Float32Array(72);
-  for (var a = 0; a < 72; a++){ var az = a*5*DEG; prof[a] = horizonDir(x, z, h0, Math.sin(az), -Math.cos(az), 0.2, 0.04); }
-  var c = Math.hypot(x, z)/R_MOON/DEG, saz = Math.atan2(x, -z), ex = c*Math.sin(saz), ez = c*Math.cos(saz);
-  var sumS = 0, sumE = 0, n = 0;
-  for (var t = 0.13; t < YEAR; t += 0.37){
-    var su = sunAt(t), ea = earthAt(t);
-    var f = su.az/5, i0 = Math.floor(f) % 72, fr = f - Math.floor(f), hz = prof[i0]*(1 - fr) + prof[(i0 + 1) % 72]*fr;
-    var el = su.el + Math.cos(su.az*DEG)*ez + Math.sin(su.az*DEG)*ex; sumS += clamp((el - hz + SUN_R)/(2*SUN_R), 0, 1);
-    var fe = ea.az/5, j0 = Math.floor(fe) % 72, fq = fe - Math.floor(fe), he = prof[j0]*(1 - fq) + prof[(j0 + 1) % 72]*fq;
-    var ee = ea.el + Math.cos(ea.az*DEG)*ez + Math.sin(ea.az*DEG)*ex; if (ee > he) sumE++;
-    n++;
-  }
-  return sumS/n + 0.15*sumE/n;
+/* Time until the Sun centre (or any part of Earth) crosses the terrain horizon, up to 60 days ahead:
+   1 h steps, then 12 bisections. Returns {up, hours}; hours is null when nothing changes. */
+function nextChange(s, t, body){
+  var on = function(tt){ var st = siteState(s, tt); return body === 'sun' ? st.sunLit >= 0.5 : st.earthVis > 0; };
+  var now = on(t), step = 1/24, a = t, b = null;
+  for (var k = 1; k <= 60*24; k++){ var tt = t + k*step; if (on(tt) !== now){ b = tt; break; } a = tt; }
+  if (b === null) return {up: now, hours: null};
+  for (var it = 0; it < 12; it++){ var mid = (a + b)/2; if (on(mid) === now) a = mid; else b = mid; }
+  return {up: now, hours: (b - t)*24};
 }
-(function(){
-  var best = null, bs = -1;
-  for (var a = 0; a < 360; a += 5) for (var f = 0.96; f <= 1.05; f += 0.04){
-    var x = MAIN.x + Math.sin(a*DEG)*MAIN.R*f, z = MAIN.z - Math.cos(a*DEG)*MAIN.R*f;
-    if (Math.abs(x) > HALF - 1 || Math.abs(z) > HALF - 1) continue;
-    var sc = quickScore(x, z); if (sc > bs){ bs = sc; best = [x, z]; }
+
+/* ---------- landing-window evaluation ----------
+   For a landing at 00:00 UTC on day d and a mission of L days: sunlight %, Earth contact %,
+   longest night (hours; ">=" when the dark spell runs past the mission window) and the Sun's height
+   above the terrain horizon at touchdown. Each limit that fails is listed, in a fixed order. */
+var LIM = {len: 13, sun: 70, earth: 50, night: 48, td: 0, relay: false};
+function evalWindow(s, d){
+  var h0 = d*24, h1 = h0 + LIM.len*24, H = s.hSun.length;
+  if (h1 > H) return null;
+  var sun = (s.cs[h1] - s.cs[h0])/(h1 - h0)*100, earth = (s.ce[h1] - s.ce[h0])/(h1 - h0)*100;
+  var night = 0, clipped = false, runs = s.darkRuns;
+  for (var r = 0; r < runs.length; r += 2){
+    var a = runs[r], b = runs[r + 1]; if (b <= h0) continue; if (a >= h1) break;
+    var len = Math.min(b, h1) - Math.max(a, h0);
+    if (len > night){ night = len; clipped = a < h0 || b > h1; }
   }
-  sites.push(makeSite('A', 'Crater rim', best[0], best[1]));
-  sites.push(makeSite('B', 'Massif slope', MASSIF.x + 0.3, MASSIF.z - 4.6));
-  sites.push(makeSite('C', 'Crater floor', MAIN.x, MAIN.z));
-  sites[0].note = 'Best point on the rim, ' + num(sites[0].dist, 1) + ' km from the pole';
-  sites[1].note = 'Earth-facing slope, ' + num(sites[1].dist, 1) + ' km from the pole';
-  sites[2].note = 'Permanently shadowed area, where ice may be found';
-})();
+  var td = s.hSunEl[h0], fail = [];
+  if (sun < LIM.sun) fail.push('sun');
+  if (!LIM.relay && earth < LIM.earth) fail.push('earth');
+  if (night > LIM.night) fail.push('night');
+  if (td < LIM.td) fail.push('td');
+  return {d: d, sun: sun, earth: earth, night: night, clipped: clipped, td: td, fail: fail};
+}
+function evalSite(s){
+  var out = [], n = DAYS - LIM.len + 1;
+  for (var d = 0; d < n; d++) out.push(evalWindow(s, d));
+  return out;
+}
+
+function buildSites(){ sites = SITE_LIST.map(makeSite); if (custom) sites.push(makeSite(custom)); }
+var custom = null;
+buildSites();
 var sel = 0;
 
-/* ---------- state ---------- */
-var state = {t: 80, playing: false, speed: 3, exag: 2.5, mode: 0};
 var cam = {yaw: 0.55, pitch: 0.58, dist: 66};
 var dirty = {geo: true, light: true, layer: true, view: true, charts: true, sites: true};
 
@@ -573,17 +759,9 @@ function draw(){
 
 /* ---------- overlay labels ---------- */
 var labelsEl = $('#labels'), pinEls = [], geoEls = [], sunEl, earthEl;
-function buildPins(){
-  pinEls.forEach(function(p){ p.remove(); }); pinEls = [];
-  sites.forEach(function(s, i){
-    var el = document.createElement('div'); el.className = 'mk pin';
-    el.innerHTML = '<i class="dot"></i><i class="stem"></i>';
-    var tag = document.createElement('button'); tag.type = 'button'; tag.className = 'tag';
-    tag.setAttribute('aria-label', 'Select site ' + s.id + ', ' + s.name);
-    tag.addEventListener('click', function(){ select(i); });
-    el.appendChild(tag); labelsEl.appendChild(el); pinEls.push(el);
-  });
-}
+/* Real sites are not on the demo terrain, so the 3D view carries no site pins until real
+   LOLA heights replace it. */
+function buildPins(){ pinEls.forEach(function(p){ p.remove(); }); pinEls = []; }
 function buildGeo(){
   [[0, 0, 'South Pole'], [0, 15.162, '89.5° S']].forEach(function(g){
     var el = document.createElement('div'); el.className = 'mk geo';
@@ -597,14 +775,9 @@ function buildGeo(){
 function place(el, p){ if (!p || p[0] < -60 || p[0] > W + 60 || p[1] < -60 || p[1] > Hh + 60){ el.hidden = true; return; } el.hidden = false; el.style.transform = 'translate(' + p[0].toFixed(1) + 'px,' + p[1].toFixed(1) + 'px)'; }
 function updateLabels(){
   var e = state.exag;
-  sites.forEach(function(s, i){
-    var el = pinEls[i]; if (!el) return;
-    place(el, project(s.x, s.h*e, s.z));
-    el.classList.toggle('sel', i === sel);
-    el.querySelector('.tag').textContent = i === sel ? s.id + ' · ' + s.name : s.id;
-  });
   geoEls.forEach(function(g){ place(g.el, project(g.x, hAt(g.x, g.z)*e, g.z)); });
-  var st = siteState(sites[sel], state.t), top = HMAXr*e + 1.2, R = 27;
+  var su = sunAt(state.t), ea = earthAt(state.t), top = HMAXr*e + 1.2, R = 27;
+  var st = {sunAz: su.az, sunEl: su.el, sunLit: su.el > 0 ? 1 : 0, earthAz: ea.az, earthEl: ea.el, earthVis: ea.el > 0 ? 1 : 0};
   var ps = project(Math.sin(st.sunAz*DEG)*R, top + st.sunEl*1.4, -Math.cos(st.sunAz*DEG)*R);
   var pe = project(Math.sin(st.earthAz*DEG)*R, top + 2 + st.earthEl*0.9, -Math.cos(st.earthAz*DEG)*R);
   [ps, pe].forEach(function(p){ if (p){ p[0] = clamp(p[0], 14, W - 14); p[1] = clamp(p[1], 22, Hh - 64); } });
@@ -613,8 +786,8 @@ function updateLabels(){
   earthEl.classList.toggle('flip', !!pe && pe[0] > W - 130);
   sunEl.classList.toggle('blocked', st.sunLit < 0.5);
   earthEl.classList.toggle('blocked', st.earthVis < 0.5);
-  sunEl.querySelector('span').textContent = 'Sun ' + sgn(st.sunEl, 1) + '°';
-  earthEl.querySelector('span').textContent = 'Earth ' + sgn(st.earthEl, 1) + '°';
+  sunEl.querySelector('span').textContent = 'Sun at pole ' + sgn(st.sunEl, 1) + '°';
+  earthEl.querySelector('span').textContent = 'Earth at pole ' + sgn(st.earthEl, 1) + '°';
 }
 
 /* ---------- legend, readout, sites panel ---------- */
@@ -625,7 +798,19 @@ function renderLegend(){
   else legendEl.innerHTML = '<span><i class="grad earth"></i>0% → 100% of the year with Earth visible</span><span>Average over 365 days</span>';
 }
 function pct(v){ return Math.round(v*100) + '%'; }
-function nightText(d){ return d > 364 ? 'all year' : num(d, d < 10 ? 1 : 0) + ' days'; }
+function nightText(d, clipped){ return d >= DAYS - 0.5 ? 'whole span' : (clipped ? '≥ ' : '') + (d < 2 ? num(d*24, 0) + ' h' : num(d, d < 10 ? 1 : 0) + ' days'); }
+/* Data-quality line: named sites have published references; custom spots and flat horizons say so. */
+function qualityText(s){
+  var q = [];
+  if (s.flat) q.push('flat horizon (terrain mask not loaded)');
+  else if (s.meta && s.meta.approx) q.push('approximate mask, 600 m terrain');
+  else q.push('LOLA mask' + (s.meta && s.meta.dem_near ? ', 20 m near field' : ''));
+  if (s.meta && s.meta.err_m != null) q.push('height error ±' + num(s.meta.err_m, 1) + ' m');
+  if (s.meta && s.meta.effres_m != null) q.push('effective resolution ' + num(s.meta.effres_m, 0) + ' m');
+  q.push(s.studied ? 'published reference' : 'no published reference');
+  if (s.meta && s.meta.validated === false) q.push('engine result not yet validated');
+  return q.join(' · ');
+}
 var sitesEl = $('#sites');
 function renderSites(){
   sitesEl.innerHTML = '';
@@ -639,21 +824,21 @@ function renderSites(){
         '<span class="st"><span class="st-k">Sun</span><span class="st-v sun">' + pct(s.pSun) + '</span><span class="bar sun"><b style="width:' + pct(s.pSun) + '"></b></span></span>' +
         '<span class="st"><span class="st-k">Earth</span><span class="st-v earth">' + pct(s.pEarth) + '</span><span class="bar earth"><b style="width:' + pct(s.pEarth) + '"></b></span></span>' +
         '<span class="st"><span class="st-k">Both</span><span class="st-v">' + pct(s.pBoth) + '</span></span>' +
-        '<span class="st"><span class="st-k" title="Longest period without Sun">Max. night</span><span class="st-v">' + nightText(s.night) + '</span></span>' +
+        '<span class="st"><span class="st-k" title="Longest period with the Sun centre below the horizon">Max. night</span><span class="st-v">' + nightText(s.night, s.nightClipped) + '</span></span>' +
       '</span>';
     b.querySelector('.site-name').textContent = s.name;
-    b.querySelector('.site-note').textContent = s.note;
+    b.querySelector('.site-note').textContent = s.note + ' · ' + num(Math.abs(s.lat), 4) + '° S, ' + num(s.lon, 2) + '° E · ' + qualityText(s);
     b.addEventListener('click', function(){ select(i); });
     sitesEl.appendChild(b);
   });
 }
-function select(i){ sel = i; $('#hName').textContent = sites[i].id; dirty.sites = true; dirty.charts = true; dirty.view = true; }
+function select(i){ sel = i; $('#hName').textContent = sites[i].name; dirty.sites = true; dirty.charts = true; dirty.view = true; lastHead = -1; schedulePlan(); }
 var readoutEl = $('#readout');
 function renderReadout(){
   var s = sites[sel], st = siteState(s, state.t);
-  readoutEl.innerHTML = '<span class="m">From ' + s.id + ':</span> ' +
-    '<span class="s">Sun ' + sgn(st.sunEl, 2) + '° (' + (st.sunLit > 0.5 ? 'lit' : 'hidden by terrain') + ')</span> · ' +
-    '<span class="e">Earth ' + sgn(st.earthEl, 2) + '° (' + (st.earthVis > 0.5 ? 'visible' : 'hidden') + ')</span>';
+  readoutEl.innerHTML = '<span class="m">From ' + s.name + ':</span> ' +
+    '<span class="s">Sun ' + sgn(st.sunEl, 2) + '° (' + (st.sunLit > 0.5 ? 'lit' : s.flat ? 'below the horizon' : 'hidden by terrain') + ')</span> · ' +
+    '<span class="e">Earth ' + sgn(st.earthEl, 2) + '° (' + (st.earthVis > 0 ? 'visible' : 'hidden') + ')</span>';
 }
 
 /* ---------- charts ---------- */
@@ -672,35 +857,35 @@ function drawHorizon(){
   var f = fitCanvas(hzCanvas, 210), ctx = f.ctx, w = f.w, h = f.h, s = sites[sel], st = siteState(s, state.t);
   var C = {ink: tok('--ink'), muted: tok('--muted'), line: tok('--line'), sky: tok('--sky'), ground: tok('--ground'), sun: tok('--sun-fill'), earth: tok('--earth-fill'), sunT: tok('--sun'), earthT: tok('--earth'), mono: tok('--f-mono')};
   var pl = 36, pr = 8, pt = 10, pb = 24, pw = w - pl - pr, ph = h - pt - pb;
-  var yMax = Math.min(40, Math.max(8, Math.ceil(s.pmax + 2))), yMin = Math.min(-3, Math.floor(s.pmin - 1));
-  var X = function(rel){ return pl + (rel + 180)/360*pw; }, Y = function(el){ return pt + (yMax - el)/(yMax - yMin)*ph; };
+  var pathMax = -90, pathMin = 90, k;
+  for (k = 1; k < s.pathSun.length; k += 2){ pathMax = Math.max(pathMax, s.pathSun[k]); pathMin = Math.min(pathMin, s.pathSun[k]); }
+  for (k = 1; k < s.pathEarth.length; k += 2){ pathMax = Math.max(pathMax, s.pathEarth[k]); pathMin = Math.min(pathMin, s.pathEarth[k]); }
+  var yMax = Math.min(40, Math.ceil(Math.max(4, s.pmax + 1, pathMax + 1))), yMin = Math.floor(Math.min(-2, s.pmin - 1, pathMin - 1));
+  var X = function(az){ return pl + az/360*pw; }, Y = function(el){ return pt + (yMax - el)/(yMax - yMin)*ph; };
   ctx.clearRect(0, 0, w, h);
   ctx.fillStyle = C.sky; ctx.fillRect(pl, pt, pw, ph);
-  var stepY = (yMax - yMin) > 24 ? 10 : 5;
+  var stepY = (yMax - yMin) > 24 ? 10 : (yMax - yMin) > 10 ? 5 : 2;
   ctx.font = '500 10.5px ' + C.mono; ctx.textBaseline = 'middle'; ctx.textAlign = 'right';
   for (var gy = Math.ceil(yMin/stepY)*stepY; gy <= yMax; gy += stepY){
     ctx.strokeStyle = C.line; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(pl, Y(gy) + 0.5); ctx.lineTo(pl + pw, Y(gy) + 0.5); ctx.stroke();
     ctx.fillStyle = C.muted; ctx.fillText((gy > 0 ? '+' : gy < 0 ? '−' : '') + Math.abs(gy) + '°', pl - 5, Y(gy));
   }
-  var rel, az;
-  ctx.globalAlpha = 0.45; ctx.fillStyle = C.sun; ctx.beginPath();
-  for (rel = -180; rel <= 180; rel += 2){ az = (rel + 360) % 360; var off = Math.cos(az*DEG)*s.ez + Math.sin(az*DEG)*s.ex; if (rel === -180) ctx.moveTo(X(rel), Y(1.54 + off)); else ctx.lineTo(X(rel), Y(1.54 + off)); }
-  for (rel = 180; rel >= -180; rel -= 2){ az = (rel + 360) % 360; var off2 = Math.cos(az*DEG)*s.ez + Math.sin(az*DEG)*s.ex; ctx.lineTo(X(rel), Y(-1.54 + off2)); }
-  ctx.closePath(); ctx.fill(); ctx.globalAlpha = 1;
-  var eOff = s.ez;
-  ctx.fillStyle = C.earth; ctx.globalAlpha = 0.28;
-  ctx.fillRect(X(-7.9), Y(6.7 + eOff), X(7.9) - X(-7.9), Y(-6.7 + eOff) - Y(6.7 + eOff));
-  ctx.globalAlpha = 1; ctx.strokeStyle = C.earth; ctx.lineWidth = 1;
-  ctx.strokeRect(X(-7.9) + 0.5, Y(6.7 + eOff) + 0.5, X(7.9) - X(-7.9), Y(-6.7 + eOff) - Y(6.7 + eOff));
-  ctx.fillStyle = C.ground; ctx.beginPath(); ctx.moveTo(X(-180), pt + ph);
-  for (rel = -180; rel <= 180; rel += 1){ az = (rel + 360) % 360; ctx.lineTo(X(rel), Y(clamp(s.prof[az % 360], yMin, yMax))); }
-  ctx.lineTo(X(180), pt + ph); ctx.closePath(); ctx.fill();
+  var dots = function(path, color){
+    ctx.fillStyle = color; ctx.globalAlpha = 0.35;
+    for (var i = 0; i < path.length; i += 2) ctx.fillRect(X(path[i]) - 0.75, Y(path[i + 1]) - 0.75, 1.5, 1.5);
+    ctx.globalAlpha = 1;
+  };
+  dots(s.pathEarth, C.earth); dots(s.pathSun, C.sun);
+  var az;
+  ctx.fillStyle = C.ground; ctx.globalAlpha = 0.85; ctx.beginPath(); ctx.moveTo(X(0), pt + ph);
+  for (az = 0; az <= 360; az += 1) ctx.lineTo(X(az), Y(clamp(s.prof[az % 360], yMin, yMax)));
+  ctx.lineTo(X(360), pt + ph); ctx.closePath(); ctx.fill(); ctx.globalAlpha = 1;
   ctx.strokeStyle = C.ink; ctx.lineWidth = 1.2; ctx.beginPath();
-  for (rel = -180; rel <= 180; rel += 1){ az = (rel + 360) % 360; var yy = Y(clamp(s.prof[az % 360], yMin, yMax)); if (rel === -180) ctx.moveTo(X(rel), yy); else ctx.lineTo(X(rel), yy); }
+  for (az = 0; az <= 360; az += 1){ var yy = Y(clamp(s.prof[az % 360], yMin, yMax)); if (az === 0) ctx.moveTo(X(az), yy); else ctx.lineTo(X(az), yy); }
   ctx.stroke();
   ctx.setLineDash([3, 3]); ctx.strokeStyle = C.muted; ctx.beginPath(); ctx.moveTo(pl, Y(0) + 0.5); ctx.lineTo(pl + pw, Y(0) + 0.5); ctx.stroke(); ctx.setLineDash([]);
-  var mark = function(r, el, color, filled, label, below){
-    var x = X(r), y = Y(clamp(el, yMin, yMax));
+  var mark = function(a, el, color, filled, label, below){
+    var x = X(a), y = Y(clamp(el, yMin, yMax));
     ctx.beginPath(); ctx.arc(x, y, 5.5, 0, Math.PI*2);
     ctx.lineWidth = 2; ctx.strokeStyle = color; ctx.stroke();
     if (filled){ ctx.fillStyle = color; ctx.fill(); }
@@ -709,14 +894,14 @@ function drawHorizon(){
     if (tx + tw > pl + pw) { tx = x - 9 - tw; }
     ctx.fillStyle = below; ctx.fillText(label, tx, y);
   };
-  mark(relAz(st.earthAz), st.earthEl, C.earth, st.earthVis > 0.5, 'Earth', C.earthT);
-  mark(relAz(st.sunAz), st.sunEl, C.sun, st.sunLit > 0.5, 'Sun', C.sunT);
+  mark(st.earthAz, st.earthEl, C.earth, st.earthVis > 0, 'Earth', C.earthT);
+  mark(st.sunAz, st.sunEl, C.sun, st.sunLit > 0.5, 'Sun', C.sunT);
   ctx.strokeStyle = C.line; ctx.strokeRect(pl + 0.5, pt + 0.5, pw - 1, ph - 1);
-  ctx.textAlign = 'center'; ctx.textBaseline = 'top'; ctx.font = '500 10.5px ' + C.mono;
-  [[-180, '−180°'], [-90, '−90°'], [0, '0° Earth'], [90, '+90°'], [180, '+180°']].forEach(function(tk){
-    ctx.fillStyle = C.muted; var tx = X(tk[0]);
-    if (tk[0] === -180) ctx.textAlign = 'left'; else if (tk[0] === 180) ctx.textAlign = 'right'; else ctx.textAlign = 'center';
-    ctx.fillText(tk[1], tx, pt + ph + 6);
+  ctx.textBaseline = 'top'; ctx.font = '500 10.5px ' + C.mono;
+  [[0, 'N 0°'], [90, 'E 90°'], [180, 'S 180°'], [270, 'W 270°'], [360, 'N']].forEach(function(tk){
+    ctx.fillStyle = C.muted;
+    ctx.textAlign = tk[0] === 0 ? 'left' : tk[0] === 360 ? 'right' : 'center';
+    ctx.fillText(tk[1], X(tk[0]), pt + ph + 6);
   });
 }
 var tlCanvas = $('#timeline'), TL = {l: 26, r: 6, top: 6, row: 26, axis: 22};
@@ -725,13 +910,13 @@ function drawTimeline(){
   var f = fitCanvas(tlCanvas, hgt), ctx = f.ctx, w = f.w, pw = w - TL.l - TL.r;
   var C = {ink: tok('--ink'), muted: tok('--muted'), line: tok('--line'), sun: tok('--sun-fill'), earth: tok('--earth-fill'), mono: tok('--f-mono')};
   ctx.clearRect(0, 0, w, hgt);
-  var cw = pw/YEAR;
+  var cw = pw/DAYS;
   sites.forEach(function(s, r){
     var y0 = TL.top + r*TL.row;
     ctx.font = '600 11.5px ' + C.mono; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
     ctx.fillStyle = r === sel ? C.ink : C.muted; ctx.fillText(s.id, 4, y0 + 8);
     ctx.fillStyle = C.line; ctx.fillRect(TL.l, y0, pw, 10); ctx.fillRect(TL.l, y0 + 12, pw, 6);
-    for (var d = 0; d < YEAR; d++){
+    for (var d = 0; d < DAYS; d++){
       var a = s.daySun[d]; if (a > 0.01){ ctx.globalAlpha = a; ctx.fillStyle = C.sun; ctx.fillRect(TL.l + d*cw, y0, cw + 0.6, 10); }
       var e = s.dayEarth[d]; if (e > 0.01){ ctx.globalAlpha = e; ctx.fillStyle = C.earth; ctx.fillRect(TL.l + d*cw, y0 + 12, cw + 0.6, 6); }
     }
@@ -740,23 +925,23 @@ function drawTimeline(){
   });
   var yA = TL.top + sites.length*TL.row;
   ctx.font = '500 10.5px ' + C.mono; ctx.textBaseline = 'top'; ctx.fillStyle = C.muted;
-  [0, 60, 120, 180, 240, 300, 365].forEach(function(d){
-    var x = TL.l + d/YEAR*pw; ctx.textAlign = d === 0 ? 'left' : d === 365 ? 'right' : 'center';
-    ctx.fillText(d === 0 ? 'day 0' : String(d), x, yA);
+  [0, 0.25, 0.5, 0.75, 1].map(function(f){ return Math.round(f*DAYS); }).forEach(function(d){
+    var x = TL.l + d/DAYS*pw; ctx.textAlign = d === 0 ? 'left' : d === DAYS ? 'right' : 'center';
+    ctx.fillText(dateFromJd(state.jd0 + d).toISOString().slice(0, 7), x, yA);
   });
-  var cx = TL.l + state.t/YEAR*pw;
+  var cx = TL.l + state.t/DAYS*pw;
   ctx.strokeStyle = C.ink; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(cx, 1); ctx.lineTo(cx, yA - 3); ctx.stroke();
 }
 tlCanvas.addEventListener('pointerdown', function(ev){
   var rect = tlCanvas.getBoundingClientRect(), pw = rect.width - TL.l - TL.r;
-  setT(clamp((ev.clientX - rect.left - TL.l)/pw*YEAR, 0, YEAR));
+  setT(clamp((ev.clientX - rect.left - TL.l)/pw*DAYS, 0, DAYS));
   var row = Math.floor((ev.clientY - rect.top - TL.top)/TL.row);
   if (row >= 0 && row < sites.length && row !== sel) select(row);
 });
 
 /* ---------- interaction ---------- */
 var tInput = $('#t'), tOut = $('#tOut'), playBtn = $('#play'), playIcon = $('#playIcon');
-function setT(t){ state.t = ((t % YEAR) + YEAR) % YEAR; tInput.value = state.t.toFixed(2); dirty.light = true; dirty.charts = true; dirty.view = true; }
+function setT(t){ state.t = t > DAYS ? 0 : clamp(t, 0, DAYS); tInput.value = state.t.toFixed(2); dirty.light = true; dirty.charts = true; dirty.view = true; }
 tInput.addEventListener('input', function(){ setT(parseFloat(tInput.value)); });
 playBtn.addEventListener('click', function(){
   state.playing = !state.playing;
@@ -794,7 +979,6 @@ canvas.addEventListener('pointermove', function(e){
   dirty.view = true;
 });
 function endPointer(e){
-  if (downInfo && pointers.size === 1 && downInfo.moved < 8 && performance.now() - downInfo.t < 450 && e.type === 'pointerup') pickAt(e.clientX, e.clientY);
   pointers.delete(e.pointerId); downInfo = null; if (pointers.size < 2) pinch = null;
 }
 canvas.addEventListener('pointerup', endPointer);
@@ -808,29 +992,216 @@ canvas.addEventListener('keydown', function(e){
   else used = false;
   if (used){ e.preventDefault(); dirty.view = true; }
 });
-function pickAt(cx, cy){
-  var rect = canvas.getBoundingClientRect(), nx = (cx - rect.left)/rect.width*2 - 1, ny = 1 - (cy - rect.top)/rect.height*2;
-  var inv = invert(VP); if (!inv) return;
-  var un = function(z){ var x = inv[0]*nx + inv[4]*ny + inv[8]*z + inv[12], y = inv[1]*nx + inv[5]*ny + inv[9]*z + inv[13], zz = inv[2]*nx + inv[6]*ny + inv[10]*z + inv[14], w = inv[3]*nx + inv[7]*ny + inv[11]*z + inv[15]; return [x/w, y/w, zz/w]; };
-  var p0 = un(-1), p1 = un(1), d = [p1[0] - p0[0], p1[1] - p0[1], p1[2] - p0[2]], dl = Math.hypot(d[0], d[1], d[2]); d = [d[0]/dl, d[1]/dl, d[2]/dl];
-  var e = state.exag, prevT = 0;
-  for (var s = 1; s < 1400; s++){
-    var tt = s*0.15, x = p0[0] + d[0]*tt, y = p0[1] + d[1]*tt, z = p0[2] + d[2]*tt;
-    if (Math.abs(x) <= HALF && Math.abs(z) <= HALF && y <= hAt(x, z)*e){
-      var lo = prevT, hi = tt;
-      for (var it = 0; it < 10; it++){ var mid = (lo + hi)/2, mx = p0[0] + d[0]*mid, my = p0[1] + d[1]*mid, mz = p0[2] + d[2]*mid; if (my <= hAt(mx, mz)*e) hi = mid; else lo = mid; }
-      addCustom(p0[0] + d[0]*hi, p0[2] + d[2]*hi); return;
-    }
-    prevT = tt;
+/* ---------- add a site by coordinates ---------- */
+$('#addsite').addEventListener('submit', function(e){
+  e.preventDefault();
+  var lat = parseFloat($('#aLat').value), lon = parseFloat($('#aLon').value);
+  if (!(lat >= -90 && lat <= -80) || !(lon >= 0 && lon <= 360)) return;
+  custom = {id: 'X', name: 'Your site', lat: lat, lon: ((lon % 360) + 360) % 360, note: 'Entered by you'};
+  var s = makeSite(custom);
+  if (sites.length > SITE_LIST.length) sites[SITE_LIST.length] = s; else sites.push(s);
+  select(SITE_LIST.length);
+});
+
+/* ---------- first landing date + time span (UTC midnight) ----------
+   The ephemeris file ends at EPH_END, so the last allowed first date is EPH_END minus the span. */
+var startEl = $('#start');
+var EPH_END = EPH.jd0 + (EPH.n - 3)*EPH.step_hours/24;
+function isoDay(jd){ return dateFromJd(jd).toISOString().slice(0, 10); }
+function clampStart(){
+  var maxJd = Math.floor(EPH_END - DAYS - 0.5) + 0.5;
+  startEl.max = isoDay(maxJd);
+  if (state.jd0 > maxJd) state.jd0 = maxJd;
+  startEl.value = isoDay(state.jd0);
+}
+function rebuildAll(){
+  var t0 = performance.now();
+  buildSites(); setT(clamp(state.t, 0, DAYS)); tInput.max = DAYS;
+  meanDone = 0; sunMean.fill(0); earthMean.fill(0);
+  if (stage === 2){ stage = 1; statusEl.hidden = false; segBtns.forEach(function(o){ o.disabled = o.getAttribute('data-mode') !== '0'; }); }
+  dirty.sites = true; dirty.charts = true; lastHead = -1;
+  lastBuildMs = performance.now() - t0;
+  schedulePlan();
+}
+var lastBuildMs = 0;
+clampStart();
+startEl.addEventListener('change', function(){
+  if (!startEl.value) return;
+  var d = new Date(startEl.value + 'T00:00:00Z');
+  if (isNaN(d)) return;
+  state.jd0 = jdFromDate(d); clampStart(); state.t = 0;
+  rebuildAll();
+});
+
+/* ---------- headline: time to the next sunset / Earthset (or rise) ---------- */
+var headEl = $('#headline'), lastHead = -1, lastHeadAt = 0;
+function hoursText(h){ return h < 48 ? num(h, 1) + ' h' : num(h/24, 1) + ' days'; }
+function change(c, setWord, riseWord){
+  var w = c.up ? setWord : riseWord;
+  return c.hours === null ? 'No ' + w.toLowerCase() + ' within 60 days' : w + ' in ' + hoursText(c.hours);
+}
+function renderHeadline(force){
+  var now = performance.now();
+  if (!force && Math.abs(state.t - lastHead) < 1/96 && lastHead >= 0) return;
+  if (!force && state.playing && now - lastHeadAt < 250) return;
+  lastHead = state.t; lastHeadAt = now;
+  var s = sites[sel], sn = nextChange(s, state.t, 'sun'), en = nextChange(s, state.t, 'earth');
+  headEl.innerHTML =
+    '<span class="m">' + s.name.replace(/[<>&]/g, '') + ' · ' + dateFromJd(state.jd0 + state.t).toISOString().slice(0, 16).replace('T', ' ') + ' UTC</span><br>' +
+    '<span class="s">' + change(sn, 'Sunset', 'Sunrise') + '</span> · ' +
+    '<span class="e">' + change(en, 'Earthset', 'Earthrise') + '</span><br>' +
+    '<span class="m">Sun: disc centre vs the ' + (s.flat ? 'flat 0° horizon (terrain mask not loaded yet)' : 'terrain horizon') + '. Earth: any part of its disc.</span>';
+}
+
+/* ---------- mission planner: controls, calendar, funnel, ranking ----------
+   Everything here is computed live in the browser from the hourly series in computeSite. */
+var PRESETS = {
+  crew: {len: 6, sun: 95, earth: 50, night: 0, td: 0},
+  robotic: {len: 13, sun: 70, earth: 50, night: 48, td: 0}
+};   // example values, not NASA requirements (the page says so)
+var MS_PER_SPOT_YEAR = 0.7;   // engine MEASURED, single thread (vault DECISIONS item 8)
+var GLYPH = {sun: '☀', earth: '⊕', night: '☾', td: '▲'};
+var FAILTXT = {sun: 'too little sun', earth: 'too little Earth contact', night: 'night too long', td: 'Sun too low at touchdown'};
+var SL = {len: $('#sLen'), sun: $('#sSun'), earth: $('#sEarth'), night: $('#sNight'), td: $('#sTd')};
+var OUT = {len: $('#oLen'), sun: $('#oSun'), earth: $('#oEarth'), night: $('#oNight'), td: $('#oTd')};
+var pSite = $('#pSite'), calEl = $('#cal'), funnelEl = $('#funnel'), rankEl = $('#rank'), estEl = $('#pEst');
+var planResults = [], planTimer = 0, calSelDay = -1;
+function esc(t){ return String(t).replace(/[&<>"]/g, function(c){ return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]; }); }
+
+function setPressed(group, v){ Array.prototype.forEach.call(group.querySelectorAll('button'), function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-v') === String(v) ? 'true' : 'false'); }); }
+function syncOutputs(){
+  OUT.len.textContent = LIM.len + ' days';
+  OUT.sun.textContent = LIM.sun + '%';
+  OUT.earth.textContent = LIM.relay ? 'off (relay)' : LIM.earth + '%';
+  OUT.night.textContent = LIM.night + ' h';
+  OUT.td.textContent = (LIM.td >= 0 ? '+' : '') + num(LIM.td, 1) + '°';
+  SL.earth.disabled = LIM.relay;
+}
+function applyPreset(name){
+  var p = PRESETS[name]; if (!p) return;
+  LIM.len = p.len; LIM.sun = p.sun; LIM.earth = p.earth; LIM.night = p.night; LIM.td = p.td;
+  Object.keys(SL).forEach(function(k){ SL[k].value = LIM[k]; });
+  setPressed($('#pPreset'), name); syncOutputs(); schedulePlan();
+}
+Object.keys(SL).forEach(function(k){
+  SL[k].addEventListener('input', function(){
+    LIM[k] = parseFloat(SL[k].value); setPressed($('#pPreset'), 'custom'); syncOutputs(); schedulePlan();
+  });
+});
+$('#pPreset').addEventListener('click', function(e){ var b = e.target.closest('button'); if (!b) return; var v = b.getAttribute('data-v'); if (v === 'custom'){ setPressed($('#pPreset'), 'custom'); return; } applyPreset(v); });
+$('#cRelay').addEventListener('change', function(e){ LIM.relay = e.target.checked; syncOutputs(); schedulePlan(); });
+pSite.addEventListener('change', function(){ select(parseInt(pSite.value, 10)); });
+
+/* Time span: estimate first (spots x years x 0.7 ms), warn above 3 s, then rebuild. */
+function estimateMs(years){ return sites.length*years*MS_PER_SPOT_YEAR; }
+function showEstimate(years, ran){
+  var ms = estimateMs(years);
+  estEl.className = 'est' + (ms > 3000 ? ' warn' : '');
+  estEl.textContent = sites.length + ' sites × ' + years + ' y ≈ ' + (ms < 1000 ? num(ms, 0) + ' ms' : num(ms/1000, 1) + ' s') + ' (engine estimate)' +
+    (ran ? ' · this build took ' + num(lastBuildMs, 0) + ' ms in your browser' : '') + (ms > 3000 ? ' · above 3 s: expect a pause' : '');
+}
+$('#pYears').addEventListener('click', function(e){
+  var b = e.target.closest('button'); if (!b) return;
+  var y = parseInt(b.getAttribute('data-v'), 10);
+  if (estimateMs(y) > 3000 && !window.confirm('This span is estimated at over 3 seconds. Run it?')) return;
+  setPressed($('#pYears'), y); DAYS = 365*y; clampStart(); rebuildAll(); showEstimate(y, true);
+});
+
+/* Mast height: needs one mask per height from the engine; disabled until sites.json has them. */
+function mastAvailable(){ return !!(SITEDATA && SITE_LIST.some(function(o){ return SITEDATA[o.id] && SITEDATA[o.id].masks; })); }
+(function(){
+  var ok = mastAvailable();
+  Array.prototype.forEach.call($('#pMast').querySelectorAll('button'), function(b){ b.disabled = !ok; });
+  $('#pMastNote').textContent = ok ? '' : 'Available when the engine\'s terrain masks load. Until then: flat horizon.';
+})();
+$('#pMast').addEventListener('click', function(e){
+  var b = e.target.closest('button'); if (!b || b.disabled) return;
+  state.mast = b.getAttribute('data-v'); setPressed($('#pMast'), state.mast); rebuildAll();
+});
+
+function schedulePlan(){ clearTimeout(planTimer); planTimer = setTimeout(renderPlanner, 30); }
+function renderPlanner(){
+  planResults = sites.map(evalSite);
+  // site picker
+  pSite.innerHTML = sites.map(function(s, i){ return '<option value="' + i + '">' + esc(s.name) + '</option>'; }).join('');
+  pSite.value = String(sel);
+  var s = sites[sel], res = planResults[sel], n = res.length;
+  // settings printed on the view
+  $('#calTitle').textContent = 'Landing windows: ' + s.name;
+  $('#calNote').textContent = 'Landing at 00:00 UTC · ' + LIM.len + '-day mission · sun ≥ ' + LIM.sun + '% · ' +
+    (LIM.relay ? 'Earth contact not required (relay)' : 'Earth ≥ ' + LIM.earth + '%') + ' · night ≤ ' + LIM.night + ' h · Sun at touchdown ≥ ' +
+    num(LIM.td, 1) + '° · mast ' + state.mast + ' m · ' + (s.flat ? 'flat horizon' : 'LOLA horizon');
+  // calendar: one row per month, one cell per landing day
+  var rows = {}, order = [];
+  for (var d = 0; d < DAYS; d++){
+    var dt = dateFromJd(state.jd0 + d), key = dt.toISOString().slice(0, 7), dom = dt.getUTCDate();
+    if (!rows[key]){ rows[key] = []; order.push(key); }
+    var r = res[d], cls, glyph = '', label;
+    var dayIso = dt.toISOString().slice(0, 10);
+    if (!r){ cls = 'none'; label = dayIso + ': mission would end after the time span'; }
+    else if (!r.fail.length){ cls = 'pass'; label = dayIso + ': passes. Sun ' + num(r.sun, 0) + '%, Earth ' + num(r.earth, 0) + '%, longest night ' + (r.clipped ? '≥ ' : '') + num(r.night, 0) + ' h'; }
+    else { cls = 'fail'; glyph = GLYPH[r.fail[0]]; label = dayIso + ': fails, ' + r.fail.map(function(f){ return FAILTXT[f]; }).join(', ') + '. Sun ' + num(r.sun, 0) + '%, Earth ' + num(r.earth, 0) + '%, longest night ' + (r.clipped ? '≥ ' : '') + num(r.night, 0) + ' h, Sun at touchdown ' + num(r.td, 1) + '°'; }
+    rows[key].push('<button type="button" class="cal-c ' + cls + (d === calSelDay ? ' sel' : '') + '" style="grid-column:' + (dom + 1) + '" data-d="' + d + '" aria-label="' + esc(label) + '" title="' + esc(label) + '"' + (cls === 'none' ? ' tabindex="-1"' : '') + '>' + glyph + '</button>');
   }
+  calEl.innerHTML = order.map(function(k){ return '<div class="mrow"><span class="mlab">' + k + '</span>' + rows[k].join('') + '</div>'; }).join('');
+  // funnel: how many landing days survive each limit, in order
+  var c = [0, 0, 0, 0];
+  res.forEach(function(r){
+    if (!r) return; var f = r.fail;
+    if (f.indexOf('sun') < 0){ c[0]++;
+      if (f.indexOf('earth') < 0){ c[1]++;
+        if (f.indexOf('night') < 0){ c[2]++; if (f.indexOf('td') < 0) c[3]++; } } }
+  });
+  var total = res.filter(Boolean).length;
+  funnelEl.innerHTML =
+    '<div><span>Landing days in the span</span><b>' + total + '</b></div>' +
+    '<div><span>→ enough sun</span><b>' + c[0] + '</b></div>' +
+    '<div><span>→ enough Earth contact' + (LIM.relay ? ' (relay: skipped)' : '') + '</span><b>' + c[1] + '</b></div>' +
+    '<div><span>→ night short enough</span><b>' + c[2] + '</b></div>' +
+    '<div><span>→ Sun high enough at touchdown</span><b>' + c[3] + '</b></div>';
+  // ranking: every site under the same limits
+  var rank = sites.map(function(st, i){
+    var rr = planResults[i], ok = rr.filter(function(x){ return x && !x.fail.length; }), first = ok.length ? ok[0].d : -1;
+    return {i: i, s: st, pass: ok.length, total: rr.filter(Boolean).length, first: first};
+  }).sort(function(a, b){ return b.pass - a.pass || b.s.pSun - a.s.pSun; });
+  rankEl.innerHTML = '<thead><tr><th>Site</th><th>Landing days that pass</th><th>First that passes</th><th>Sun (span)</th><th>Earth (span)</th><th>Longest night (span)</th><th>Data</th></tr></thead><tbody>' +
+    rank.map(function(x){
+      var share = x.total ? x.pass/x.total : 0;
+      return '<tr tabindex="0" data-i="' + x.i + '"' + (x.i === sel ? ' class="selr"' : '') + '>' +
+        '<td>' + esc(x.s.name) + '</td>' +
+        '<td>' + x.pass + ' / ' + x.total + '<span class="bar bar-pass"><b style="width:' + Math.round(share*100) + '%;background:var(--pass)"></b></span></td>' +
+        '<td>' + (x.first >= 0 ? isoDay(state.jd0 + x.first) : 'none') + '</td>' +
+        '<td>' + pct(x.s.pSun) + '</td><td>' + pct(x.s.pEarth) + '</td>' +
+        '<td>' + nightText(x.s.night, x.s.nightClipped) + '</td>' +
+        '<td class="q">' + esc(x.s.flat ? 'flat horizon' : (x.s.meta && x.s.meta.approx ? 'approximate' : 'LOLA mask')) + (x.s.studied ? '' : ' · no reference') + '</td></tr>';
+    }).join('') + '</tbody>';
 }
-function addCustom(x, z){
-  x = clamp(x, -HALF + 0.5, HALF - 0.5); z = clamp(z, -HALF + 0.5, HALF - 0.5);
-  var s = makeSite('D', 'Your site', x, z);
-  s.note = 'Picked on the map, ' + num(s.dist, 1) + ' km from the pole, elevation ' + sgn(s.h, 2) + ' km';
-  if (sites.length > 3) sites[3] = s; else sites.push(s);
-  buildPins(); select(3);
+calEl.addEventListener('click', function(e){
+  var b = e.target.closest('.cal-c'); if (!b || b.classList.contains('none')) return;
+  calSelDay = parseInt(b.getAttribute('data-d'), 10);
+  Array.prototype.forEach.call(calEl.querySelectorAll('.cal-c.sel'), function(x){ x.classList.remove('sel'); });
+  b.classList.add('sel');
+  setT(calSelDay); lastHead = -1;
+});
+rankEl.addEventListener('click', function(e){ var tr = e.target.closest('tr[data-i]'); if (tr) select(parseInt(tr.getAttribute('data-i'), 10)); });
+rankEl.addEventListener('keydown', function(e){ if (e.key !== 'Enter' && e.key !== ' ') return; var tr = e.target.closest('tr[data-i]'); if (tr){ e.preventDefault(); select(parseInt(tr.getAttribute('data-i'), 10)); } });
+
+/* ---------- provenance: what was precomputed, when, from what ---------- */
+var REPO_ISSUES = 'https://github.com/adrianmuntean29-wq/Lunar-Landing-Site-Navigator/issues/new';
+function renderProv(){
+  var eph = 'Sun/Earth table: ' + (EPH.versions && EPH.versions.ephemeris || 'JPL Horizons') + ', computed ' + (EPH.generated_utc || 'date unknown') +
+    ', covers ' + isoDay(EPH.jd0) + ' to ' + isoDay(EPH_END);
+  var sd = window.__sitesMeta;
+  var ter = sd ? 'Terrain masks: ' + (sd.versions && sd.versions.dem || sd.dem || 'LOLA') + ', computed ' + (sd.generated_utc || sd.generated || 'date unknown')
+               : 'Terrain masks: not loaded yet (flat horizon)';
+  var body = 'Please rerun the precalculation (pipeline/).\n\nCurrent data:\n- ' + eph + '\n- ' + ter +
+    '\n\nPage settings when requested: first date ' + isoDay(state.jd0) + ', span ' + DAYS/365 + ' y, mast ' + state.mast + ' m.' +
+    '\n\nExpected run time on the team server: named sites about 2 min, whole pole about 6 min.';
+  var url = REPO_ISSUES + '?title=' + encodeURIComponent('Request: newer precalculation') + '&body=' + encodeURIComponent(body);
+  $('#prov').innerHTML = esc(eph) + ' · ' + esc(ter) + ' · <a href="' + esc(url) + '" target="_blank" rel="noopener">Request a newer precalculation</a> (opens a GitHub issue; about 2-6 min to run)';
 }
+
+applyPreset('robotic'); showEstimate(1, false); renderProv();
 
 /* ---------- sizing & theme ---------- */
 var framed = false;
@@ -889,14 +1260,35 @@ function frame(now){
     dirty.layer = false;
   }
   if (dirty.sites){ renderSites(); dirty.sites = false; }
-  if (dirty.view){ updateVP(); draw(); updateLabels(); renderReadout(); tOut.textContent = 'Day ' + num(state.t, 1); dirty.view = false; }
+  if (dirty.view){ updateVP(); draw(); updateLabels(); renderReadout(); renderHeadline(false); tOut.textContent = dateFromJd(state.jd0 + state.t).toISOString().slice(0, 16).replace('T', ' ') + ' UTC'; dirty.view = false; }
   if (dirty.charts){ drawHorizon(); drawTimeline(); dirty.charts = false; }
   requestAnimationFrame(frame);
 }
-buildPins(); buildGeo(); renderLegend(); resize();
-window.__navigator = {sites: sites, state: state, get stage(){ return stage; }, sunMean: sunMean, earthMean: earthMean, light: light};
+buildPins(); buildGeo(); renderLegend(); resize(); select(0);
+window.__navigator = {get sites(){ return sites; }, state: state, get stage(){ return stage; }, sunMean: sunMean, earthMean: earthMean, light: light,
+  siteState: siteState, nextChange: nextChange};
 requestAnimationFrame(frame);
-})();
+}
+
+/* ---------- boot: load the ephemeris (required) and terrain masks (optional) ---------- */
+fetch('data/subpoints.json').then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); }).then(function(d){
+  EPH = d;
+  return fetch('data/sites.json').then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; });
+}).then(function(sj){
+  // Agreed format (vault log 2026-11-14-1245): per site "masks" keyed by mast height in m, 360 values each.
+  if (sj && sj.sites){
+    window.__siteData = {};
+    window.__sitesMeta = {generated_utc: sj.generated_utc || sj.generated, versions: sj.versions, dem: sj.dem};
+    sj.sites.forEach(function(o){
+      if (!o.id || !o.masks) return;
+      var ok = Object.keys(o.masks).every(function(k){ return o.masks[k] && o.masks[k].length === 360; });
+      if (ok) window.__siteData[o.id] = o;
+    });
+  }
+  startApp();
+}).catch(function(err){
+  document.getElementById('status').textContent = 'Could not load data/subpoints.json (' + err.message + '). Open the page through a web server, not as a local file.';
+});
 </script>
 </body>
 </html>
