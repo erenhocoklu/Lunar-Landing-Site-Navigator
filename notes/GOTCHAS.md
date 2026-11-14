@@ -22,6 +22,11 @@ Append, never delete. Strike through with a date when fixed.
 - **No mentor here knows planetary data** (mentor sheet, 14 Nov). Do not expect a mentor to validate Sun/Earth numbers.
 - **AI media:** AI images need a visible watermark; no NASA logos in AI content; nobody under 18 in any media.
 - **The 5 m 87S mosaic (PGDA 81, 3.47 GB) reaches only ~91 km.** Good for close detail, too short for full horizons.
+- **Surface (0 m) values at one point are fragile** (engine, home-server runs 14 Nov): a 0.7 deg slope within 100 m moved
+  C1 from 84.5% to 55.8%. The site height source (80 m vs 20 m DEM, 5 m difference) moved S from 56% to 84%. Take site height
+  from the 20 m DEM and headline 2 m mast values. See log 1400.
+- **1 km pole map undersells narrow ridges** (best spot 65.8% vs ~80% at C1/S) and 75% of spots have rays that hit the map edge.
+  Label it a screening layer.
 - **Longitude sign:** use east longitude (137.3 W = 222.7 E). Use true north, not grid north, for azimuths.
 - **Do not reuse LunaNav code:** it has no licence. Other 2026 teams' code is a judging risk even under MIT.
 - **Wording:** the crewed landing moved to Artemis IV (2028). Say "Artemis south-pole candidate regions".
