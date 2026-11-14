@@ -49,3 +49,5 @@ Never delete; strike through with a date.
     regions (~32 MB, estimate from engine's 3.6 MB per 10x10 km). Fine detail cannot be computed in the browser (PGDA has no CORS).
 11. **Ice layer.** Static layers: elevation, slope, permanent shadow (PGDA `LPSR_*`) as "possible ice", distance to nearest PSR.
     Show as a filter "lit landing spot within X km of permanent shadow"; never present PSR as confirmed ice.
+12. **heights.bin extent (raised by ENGINE, 14 Nov 12:40s).** FRONTEND's draft uses a +/-60 km display window; Eren's earlier
+    file-contract decision says a ~600 m grid of the whole cap. Conflict sent to Eren; not settled. Do not build either as final.
