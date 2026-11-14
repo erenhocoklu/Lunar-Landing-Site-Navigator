@@ -2,7 +2,7 @@
 
 Source: message from the RESEARCH session, 14 Nov. Filed by the organizer.
 Sources: `reports\Lunar landing site tools prior art.md` (+ `research_notes\`), `dem-products.md`, `horizon-method.md`,
-the concept section of the shared event note.
+concept section of `space-apps-alba-iulia-2026.md`.
 
 ## Where it went
 - Official rules, judging, team rules, Horizons call form -> CONTEXT.md

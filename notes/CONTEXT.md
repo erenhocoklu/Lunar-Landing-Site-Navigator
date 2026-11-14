@@ -37,7 +37,13 @@ any sign of work done before kickoff (Sat 14 Nov 08:30).
 ## Team
 - Adrian: repo owner.
 - Eren: no write access to Adrian's repo; pushes to his fork and opens PRs.
-- Team size: UNCLEAR. The README lists Adrian and Eren; RESEARCH wrote "for 5 members, at least 4 present". Eren to confirm.
+- ~~Team size: UNCLEAR. The README lists Adrian and Eren; RESEARCH wrote "for 5 members, at least 4 present". Eren to confirm.~~ (2026-11-14 12:21)
+- Team size: **5** (Eren confirmed 14 Nov 12:21): Eren, Adrian + 3 (names to add). All 5 must be on the NASA Members tab.
+  Local 2/3 rule = at least **4 present** at judging (not in the global guide; local rulebook per RESEARCH). Roles across 5 not agreed.
+
+## Mentors (organisers' sheet, 14 Nov; details in log 2026-11-14-1221)
+No mentor covers space or planetary data. Saturday-only: Skytek (Cisteian, Stîngaciu) until 18:00. Python/algorithms: Valentin Mariș.
+Sunday mentoring ends 15:00.
 
 ## Current state of the repo page (RESEARCH, 14 Nov)
 `index.html` already has real engine logic (horizon ray march with curvature, Sun disc, Earth visibility, yearly stats, 10 m mast)

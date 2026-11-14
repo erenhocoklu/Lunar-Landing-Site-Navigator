@@ -13,4 +13,7 @@ The submission must describe how AI tools were used. One line per use. "Human ch
 | 2026-11-14 morning | research (manager) | Claude Code, 4 research agents | Read NASA guides, tested a Horizons call, deep prior-art research, drafted concept proposal | Eren reviewed; concept not yet red-teamed |
 | 2026-11-14 11:59 | organizer | Claude Code | Set up this vault | Eren approved the structure |
 | 2026-11-14 12:01 | engine | Claude Code | Checked the seeded measurement note, filled package licences from installed metadata | Licences read from package metadata; GDAL/PROJ still to check |
+| 2026-11-14 12:40 | engine | Claude Code | Implemented Eren's automatic-reach idea in a test script and compared it to full-length rays | Exact match checked by test (0.0000 deg at 5 sites) |
+| 2026-11-14 ~11:30-12:20 | research (events) | Claude Code | Read the organisers' mentor sheet, ranked mentors for our build, built a two-day schedule page | Eren reviewed the page |
 | 2026-11-14 12:25 | engine | Claude Code | Benchmarks: mask speed vs accuracy, whole-pole masks, 5-year Horizons table, time layer in Python and JS | Timings are test output; sky table checked against per-site Horizons |
+| 2026-11-14 12:21 | research (manager) | Claude Code | Design talk: time-span control, precompute vs live, layers, read engine benchmarks | Benchmarks from engine log; proposals await Eren |

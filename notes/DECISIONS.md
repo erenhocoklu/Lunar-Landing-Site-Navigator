@@ -17,9 +17,12 @@ Never delete; strike through with a date.
 - 2026-11-14 12:10 (Eren, engine session): **file contract engine -> page:** `sites.json` (360-bin masks + stats for named sites,
   exact) + `heights.bin` + `terrain_meta.json` (~600 m grid of the whole cap for drawing and for approximate masks on clicked
   spots, labelled approximate in the UI). Exact fields still to agree with FRONTEND CODE.
+- 2026-11-14 12:40 (Eren, engine session): **horizon reach = automatic stop, no fixed km.** Each ray walks outward and stops
+  once even the tallest terrain on the map (7026 m) could not rise above the horizon already found, or at the map edge.
+  MEASURED: identical (0.0000 deg) to walking every ray to the map edge at 5 sites, same as 250 km, and faster (104-189 ms).
 
 ## Open, Eren decides
-1. **Horizon reach.** Engine recommends 250 km (MEASURED: de Gerlache changes up to 1.06 deg from 150 to 250 km, 0 deg from 250 to 300 km).
+1. ~~**Horizon reach.**~~ Decided 2026-11-14 12:40: automatic stop (see Decided). Old note: engine recommended 250 km (MEASURED: de Gerlache changes up to 1.06 deg from 150 to 250 km, 0 deg from 250 to 300 km).
    RESEARCH's horizon-method note says ~150 km. The engine measurement is newer and more specific.
 2. ~~**Sunset definition.**~~ Decided 2026-11-14 12:10: Sun centre.
 3. ~~**Engine folder layout in the repo.**~~ Decided 2026-11-14 12:10: all in `pipeline/`.
@@ -37,3 +40,12 @@ Never delete; strike through with a date.
    - Voice (ElevenLabs): last extra, one non-engine teammate, pre-generated audio, cut at the 10:30 freeze.
    - Not doing: globe as the main screen, collision system, flat horizon, invented "NASA standards".
    - Red-team checks still open: QuickMap Compute Visibility output; Teams tab + 78 repos for any grid search; HLS 2024 thresholds in the PDF.
+8. **Time-span control (Eren asked, 14 Nov).** User picks 1 / 2 / 3 / 5 years, default 1. Alert when spots x years is big
+   (MEASURED by engine: 5,000 spots x 5 y = 14.3 s in JS single thread). Supersedes "2027 by default; more years later" in item 7.
+9. **Precompute vs live (manager proposal, Eren raised the question).** Precompute what cannot change (horizon masks, 5-year
+   Sun/Earth sky table); compute live what can (calendar, user limits, mission length, time span, an updatable
+   "stay X km from other missions" filter). See log 2026-11-14-1221-research-manager-design-talk.md.
+10. **Zoom levels.** Whole south pole at 1 km (104,183 spots, MEASURED) + ~100 m detail precomputed for NASA's 9 candidate
+    regions (~32 MB, estimate from engine's 3.6 MB per 10x10 km). Fine detail cannot be computed in the browser (PGDA has no CORS).
+11. **Ice layer.** Static layers: elevation, slope, permanent shadow (PGDA `LPSR_*`) as "possible ice", distance to nearest PSR.
+    Show as a filter "lit landing spot within X km of permanent shadow"; never present PSR as confirmed ice.
